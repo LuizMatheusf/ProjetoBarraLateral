@@ -7,7 +7,6 @@ menu.onclick = function(){
     sidebar.classList.toggle('ativo')
     conteudo.classList.toggle('ativo')
 }
-
 search.onclick = function(){
     sidebar.classList.toggle('ativo')
     conteudo.classList.toggle('ativo')
