@@ -1,0 +1,262 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+/* Styles reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End reset */
+html{
+    background: linear-gradient(#f8f9fb, #aecbeb);
+    min-height: 100%;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	position: relative;
+	min-height: 100vh;
+	width: 100%;
+	overflow: hidden
+}
+
+.sidebar{
+	position:fixed;
+	height: 100%;
+	width: 78px;
+	background: #11101d;
+	padding: 6px 14px;
+	transition: all 0.5s ease; 
+}
+
+.sidebar.ativo{
+	width: 260px;
+}
+
+.sidebar .logo_conteudo .logo{
+	color: #fff;
+	display: flex;
+	height: 50px;
+	width: 100%;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar.ativo .logo_conteudo .logo{
+	opacity: 1;
+	pointer-events: none;
+}
+
+.logo_conteudo .logo i{
+	font-size: 28px;
+	margin-right: 5px;
+	font-weight: 400;
+}
+
+.logo_conteudo .logo .logo_nome{
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.sidebar.ativo #menu{
+	left: 90%;
+}
+
+.sidebar #menu{
+	cursor: pointer;
+	position: absolute;
+	color:#fff;
+	left: 50%;
+	top: 6px;
+	font-size: 28px;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	transform: translateX(-50%);
+	transition: all 0.5s ease;
+}
+
+.sidebar ul{
+	margin-top: 20px;
+}
+
+.sidebar ul li{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	margin: 0 5px;
+	line-height: 50px;
+}
+
+.sidebar.ativo ul li .legenda{
+	display: none;
+}
+
+.sidebar ul li .legenda{
+	position: absolute;
+	left: 122px;
+	top: 0;
+	transform:translate(-50% , -50%);
+	border-radius: 6px;
+	height: 35px;
+	width: 122px;
+	background-color: #fff;
+	line-height: 35px;
+	text-align: center;
+	box-shadow: 0 5px 10px rgba(0,0, 0.2);
+	transition: 0s;
+	opacity: 0;
+	pointer-events:none;
+	display: block;
+}
+.sidebar ul li:hover .legenda{
+	transition: all 0.5s ease;
+	opacity: 1;
+	top: 50%;
+}
+
+.sidebar.ativo ul li input{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.sidebar ul li input{
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	height: 100%;
+	width: 78%;
+	left: 0;
+	top: 0;
+	outline: none;
+	border: none;
+	background: #1d1d31;
+	padding-left: 50px;
+	font-size: 18px;
+	color: #fff;
+	border-radius: 12px;
+}
+
+.sidebar ul li .bx-search:hover{
+	background: #fff;
+	color:#1d1d31;
+
+}
+
+.sidebar ul li .bx-search{
+	cursor: pointer;
+	position: absolute;
+	z-index: 99;
+	color: #fff;
+	font-size: 22px;
+	transition: all 0.5s ease;
+}
+
+.sidebar ul li a{
+	color: #fff;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	border-radius: 12px;
+}
+
+.sidebar ul li a:hover{
+	color: #11101d;
+	background: #fff;
+}
+
+.sidebar ul li i{
+	height: 50px;
+	min-width: 50px;
+	border-radius: 12px;
+	line-height: 50px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.sidebar.ativo .link_name{
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.sidebar .link_name{
+	opacity: 0;
+	pointer-events: none;
+}
+
+.conteudo.ativo{
+	width: calc(100% - 260px);
+	left: 260px;			
+}
+
+.conteudo{
+	position:absolute;
+	height: 100%;
+	width: calc(100% - 78px);
+	left: 78px;
+	transition: all 0.5s ease;
+}
+
+.conteudo .texto{
+	font-size: 25px;
+	font-weight: 500;
+	color: #1d1d31;
+	margin: 12px;
+}
+
+@media(max-width: 425px){
+    .conteudo.ativo{
+		opacity: 0;
+		pointer-events: none;			
+	}
+	
+	.sidebar.ativo{
+        width: 100%;
+    }
+
+	
+}
+
