@@ -48,8 +48,8 @@ table {
 }
 /* End reset */
 html{
-    background: linear-gradient(#f8f9fb, #aecbeb);
-    min-height: 100%;
+    	background: linear-gradient(#f8f9fb, #aecbeb);
+    	min-height: 100%;
 }
 
 body {
@@ -248,14 +248,13 @@ body {
 }
 
 @media(max-width: 425px){
-    .conteudo.ativo{
+    	.conteudo.ativo{
 		opacity: 0;
 		pointer-events: none;			
 	}
 	
 	.sidebar.ativo{
-        width: 100%;
-    }
-	
+        	width: 100%;
+    	}	
 }
 
