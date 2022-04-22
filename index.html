@@ -1,109 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <!-- Boxicon CSS -->
-        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-        <link href='src/css/style.css' rel='stylesheet'>
-        <link rel="shortcut icon" href="src/imagens/favicon.png" type="image/x-icon">
-        
-        <title>Projeto Barra Lateral</title>        
-    </head>
+<head>
 
-    <body>
-        <nav>            
-            <div class="sidebar">
-                <div class="logo_conteudo">
-                    <div class='logo'>
-                        <i class='bx bx-spa' ></i>
-                        <div class="logo_nome">LOGO</div>
-                    </div>
-                        <i class='bx bx-menu' id='menu'></i>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='src/css/sideBar_style.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+
+    <title>Projeto Barra Lateral</title>
+</head>
+
+<body>
+    <main>
+        <section class='content'>
+            <h1 class='text'>Conteúdo Principal</h1>
+        </section>
+    </main>
+
+    <aside>
+        <nav class="sidebar">
+            <div class="logo_content">
+                <div class='logo'>
+                    <i class='bx bx-spa'></i>
+                    <div class="logo_name">LOGO</div>
                 </div>
+                <i class='bx bx-menu' id='menu'></i>
+            </div>
 
-                <ul class="nav_lista">
+            <div class="menu_content">
+                <ul class="nav_list">
                     <li>
-                        <i class='bx bx-search' ></i>
-                        <input type='text' placeholder='Search...'>
-                            <span class='legenda'>Search</span>
+                        <i class='bx bx-search'></i>
+                        <input type='text' placeholder='Pesquisar...'>
+                        <span class='legend'>Pesquisar</span>
                     </li>
-                        
+
                     <li>
                         <a href="#">
-                            <i class='bx bx-grid-alt' ></i>
+                            <i class='bx bx-grid-alt'></i>
                             <span class="link_name"> Dashboard </span>
                         </a>
-                            <span class='legenda'>Dashboard</span>
+                        <span class='legend'>Dashboard</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-user' ></i>
+                            <i class='bx bx-user'></i>
                             <span class="link_name"> Usuários </span>
                         </a>
-                            <span class='legenda'>Usuários</span>
+                        <span class='legend'>Usuários</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-chat' ></i>
+                            <i class='bx bx-chat'></i>
                             <span class="link_name"> Mensagens </span>
                         </a>
-                            <span class='legenda'>Mensagens</span>
+                        <span class='legend'>Mensagens</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-pie-chart-alt-2' ></i>
+                            <i class='bx bx-pie-chart-alt-2'></i>
                             <span class="link_name"> Análises </span>
                         </a>
-                            <span class='legenda'>Análises</span>
+                        <span class='legend'>Análises</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-folder' ></i>
+                            <i class='bx bx-folder'></i>
                             <span class="link_name"> Arquivos </span>
                         </a>
-                            <span class='legenda'>Arquivos</span>
+                        <span class='legend'>Arquivos</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-cart-alt' ></i>
+                            <i class='bx bx-cart-alt'></i>
                             <span class="link_name"> Pedidos </span>
                         </a>
-                            <span class='legenda'>Pedidos</span>
+                        <span class='legend'>Pedidos</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-memory-card' ></i>
+                            <i class='bx bx-memory-card'></i>
                             <span class="link_name"> Salvo </span>
                         </a>
-                            <span class='legenda'>Salvo</span>
+                        <span class='legend'>Salvo</span>
                     </li>
 
                     <li>
                         <a href="#">
-                            <i class='bx bx-cog' ></i>
-                            <span class="link_name"> Configuração </span>
+                            <i class='bx bx-cog'></i>
+                            <span class="link_name"> Configurações </span>
                         </a>
-                            <span class='legenda'>Configuração</span>
+                        <span class='legend'>Configurações</span>
+                    </li>
+                </ul>
+
+                <ul class='nav_bottom'>
+
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-log-out' ></i>
+                            <span class="link_name"> Sair </span>
+                        </a>
+                        <span class='legend'>Sair</span>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <div class="moon_sun">
+                                <i class='bx bx-moon icon_moon'></i>
+                                <i class='bx bx-sun icon_sun'></i>
+                            </div>
+                                <span class="link_name theme"> Aparência </span>
+
+                            <div class="toggle_switch">
+                                <span class="switch"></span>
+                            </div>
+                        </a>
+                        <span class='legend'>Aparência</span>
+
                     </li>
                 </ul>
             </div>
         </nav>
+    </aside>
 
-        <main>
-            <div class='conteudo'>
-                <div class='texto'>Conteúdo Principal</div>
-            </div>
-        </main>    
-
-        <script src=sidebar.js></script>
-    </body>
+    <script src=sideBar.js></script>
+</body>
 </html>
