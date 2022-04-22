@@ -1,7 +1,7 @@
-/* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-/* Styles reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,8 +11,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,35 +24,47 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /* End reset */
-html{
-    	background: linear-gradient(#f8f9fb, #aecbeb);
-    	min-height: 100%;
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+
+html {
+	min-height: 100%;
 }
 
 body {
+	background: #e4e9f7;
 	font-family: 'Poppins', sans-serif;
 	position: relative;
 	min-height: 100vh;
@@ -60,21 +72,33 @@ body {
 	overflow: hidden
 }
 
-.sidebar{
-	position:fixed;
+/* Dark Mode */
+body.dark {
+	background: #1d1d31;
+}
+
+/****************** Side Bar ******************/
+
+.sidebar {
+	position: fixed;
 	height: 100%;
-	width: 78px;
-	background: #11101d;
+	width: 80px;
+	background: #fff;
 	padding: 6px 14px;
-	transition: all 0.5s ease; 
+	transition: all 0.5s ease;
 }
 
-.sidebar.ativo{
-	width: 260px;
+/* Dark Mode*/
+body.dark .sidebar {
+	background: #11101d;
 }
 
-.sidebar .logo_conteudo .logo{
-	color: #fff;
+.sidebar.active {
+	width: 280px;
+}
+
+.sidebar .logo_content .logo {
+	color: #1d1d31;
 	display: flex;
 	height: 50px;
 	width: 100%;
@@ -83,30 +107,36 @@ body {
 	pointer-events: none;
 }
 
-.sidebar.ativo .logo_conteudo .logo{
+/* Dark Mode*/
+body.dark .sidebar .logo_content .logo {
+	color: #fff;
+}
+
+.sidebar.active .logo_content .logo {
 	opacity: 1;
 	pointer-events: none;
 }
 
-.logo_conteudo .logo i{
+.logo_content .logo i {
 	font-size: 28px;
 	margin-right: 5px;
 	font-weight: 400;
 }
 
-.logo_conteudo .logo .logo_nome{
-	font-size: 20px;
-	font-weight: 400;
+.logo_content .logo .logo_name {
+	font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
 }
 
-.sidebar.ativo #menu{
+.sidebar.active #menu {
 	left: 90%;
 }
 
-.sidebar #menu{
+.sidebar #menu {
 	cursor: pointer;
 	position: absolute;
-	color:#fff;
+	color: #1d1d31;
 	left: 50%;
 	top: 6px;
 	font-size: 28px;
@@ -114,55 +144,87 @@ body {
 	width: 50px;
 	text-align: center;
 	line-height: 50px;
+	border-radius: 12px;
 	transform: translateX(-50%);
 	transition: all 0.5s ease;
 }
 
-.sidebar ul{
+.sidebar #menu:hover {
+	color: #fff;
+	background: #695cfe;
+}
+
+/* Dark Mode*/
+body.dark .sidebar #menu {
+	color: #fff;
+}
+
+/* Dark Mode*/
+body.dark .sidebar #menu:hover {
+	background: #fff;
+	color: #1d1d31;
+}
+
+.sidebar .menu_content {
+	height: calc(100% - 50px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.sidebar ul {
 	margin-top: 20px;
 }
 
-.sidebar ul li{
+.sidebar ul li {
 	position: relative;
 	height: 50px;
 	width: 100%;
-	margin: 0 5px;
+	margin: 5px;
 	line-height: 50px;
 }
 
-.sidebar.ativo ul li .legenda{
+.sidebar.active ul li .legend {
 	display: none;
 }
 
-.sidebar ul li .legenda{
+.sidebar ul li .legend {
 	position: absolute;
 	left: 122px;
 	top: 0;
-	transform:translate(-50% , -50%);
+	transform: translate(-50%, -50%);
 	border-radius: 6px;
 	height: 35px;
 	width: 122px;
-	background-color: #fff;
+	background: #695cfe;
+	color: #fff;
 	line-height: 35px;
 	text-align: center;
-	box-shadow: 0 5px 10px rgba(0,0, 0.2);
+	box-shadow: 0 2.5px 5px rgb(0, 0, 0.2);
 	transition: 0s;
 	opacity: 0;
-	pointer-events:none;
+	pointer-events: none;
 	display: block;
 }
-.sidebar ul li:hover .legenda{
+
+/* Dark Mode*/
+body.dark .sidebar ul li .legend {
+	background: #fff;
+	color: #11101d;
+}
+
+.sidebar ul li:hover .legend {
 	transition: all 0.5s ease;
 	opacity: 1;
 	top: 50%;
 }
 
-.sidebar.ativo ul li input{
+.sidebar.active ul li input {
 	opacity: 1;
 	pointer-events: auto;
 }
 
-.sidebar ul li input{
+.sidebar ul li input {
 	opacity: 0;
 	pointer-events: none;
 	position: absolute;
@@ -172,43 +234,71 @@ body {
 	top: 0;
 	outline: none;
 	border: none;
-	background: #1d1d31;
+	color: #707070;
+	background: #f6f5ff;
 	padding-left: 50px;
 	font-size: 18px;
-	color: #fff;
 	border-radius: 12px;
 }
 
-.sidebar ul li .bx-search:hover{
-	background: #fff;
-	color:#1d1d31;
-
+/* Dark Mode*/
+body.dark .sidebar ul li input {
+	color: #fff;
+	background: #1d1d31;
 }
 
-.sidebar ul li .bx-search{
+.sidebar ul li .bx-search:hover {
+	color: #fff;
+	background: #695cfe;
+}
+
+/* Dark Mode*/
+body.dark .sidebar ul li .bx-search:hover {
+	background: #fff;
+	color: #1d1d31;
+}
+
+.sidebar ul li .bx-search {
 	cursor: pointer;
 	position: absolute;
 	z-index: 99;
-	color: #fff;
+	color: #707070;
 	font-size: 22px;
 	transition: all 0.5s ease;
 }
 
-.sidebar ul li a{
+/* Dark Mode*/
+body.dark .sidebar ul li .bx-search {
 	color: #fff;
+}
+
+.sidebar ul li a {
+	font-size: 19px;
+	color: #707070;
+	border-radius: 12px;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 	transition: all 0.4s ease;
-	border-radius: 12px;
 }
 
-.sidebar ul li a:hover{
+/* Dark Mode*/
+body.dark .sidebar ul li a {
+	color: #fff;
+}
+
+.sidebar ul li a:hover {
+	color: #fff;
+	background: #695cfe;
+}
+
+/* Dark Mode*/
+body.dark .sidebar ul li a:hover {
 	color: #11101d;
 	background: #fff;
 }
 
-.sidebar ul li i{
+.sidebar ul li i {
 	height: 50px;
 	min-width: 50px;
 	border-radius: 12px;
@@ -217,44 +307,116 @@ body {
 	white-space: nowrap;
 }
 
-.sidebar.ativo .link_name{
+.sidebar.active .link_name {
 	opacity: 1;
 	pointer-events: auto;
 }
 
-.sidebar .link_name{
+.sidebar .link_name {
 	opacity: 0;
 	pointer-events: none;
 }
 
-.conteudo.ativo{
-	width: calc(100% - 260px);
-	left: 260px;			
+.sidebar .moon_sun {
+	display: flex;
+	align-items: center;
+	min-width: 50px;
 }
 
-.conteudo{
-	position:absolute;
+.sidebar .moon_sun i {
+	position: absolute;
+	display: block;
+}
+
+.sidebar .icon_sun {
+	opacity: 0;
+}
+
+/* Dark Mode */
+body.dark .sidebar .icon_sun {
+	opacity: 1;
+	transition: all 0.2s ease;
+}
+
+body.dark .sidebar .icon_moon {
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+.sidebar .toggle_switch {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: 100%;
-	width: calc(100% - 78px);
-	left: 78px;
+	width: calc(100% - 80px);
+	cursor: pointer;
+}
+
+.sidebar.active .toggle_switch .switch {
+	position: relative;
+	height: 22px;
+	width: 50px;
+	border-radius: 25px;
+	background: #ddd;
+}
+
+body.dark .sidebar.active .toggle_switch .switch {
+	background: #1d1d31;
+}
+
+.sidebar.active .switch::before {
+	content: "";
+	position: absolute;
+	height: 15px;
+	min-width: 15px;
+	border-radius: 50%;
+	background: #fff;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	transition: all 0.3s ease;
+}
+
+body.dark .sidebar.active .switch::before {
+	left: 30px;
+}	
+
+/****************** Main ******************/
+
+.content.active {
+	width: calc(100% - 280px);
+	left: 280px;
+}
+
+.content {
+	position: absolute;
+	height: 100%;
+	width: calc(100% - 80px);
+	left: 80px;
 	transition: all 0.5s ease;
 }
 
-.conteudo .texto{
+.content .text {
 	font-size: 25px;
 	font-weight: 500;
-	color: #1d1d31;
-	margin: 12px;
+	color: #11101d;
+	margin: 18px;
 }
 
-@media(max-width: 425px){
-    	.conteudo.ativo{
+/* Dark Mode */
+body.dark .content .text {
+	color: #fff;
+}
+
+/* Media Query */
+
+@media(max-width: 425px) {
+	.conteudo.active {
 		opacity: 0;
-		pointer-events: none;			
+		pointer-events: none;
 	}
-	
-	.sidebar.ativo{
-        	width: 100%;
-    	}	
-}
 
+	.sidebar.active {
+		width: 100%;
+	}
+}
